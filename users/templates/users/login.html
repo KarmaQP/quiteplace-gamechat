@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_style %}
+  <link rel="stylesheet" href="{% static 'users/login.css' %}">
+{% endblock %}
+
+{% block title %}Quite Place | Логин{% endblock %}
+
+{% block content %}
+  <section id="login-form">
+    <h1>Login page</h1>
+    <form action="{% url 'login-page' %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="username" class="form-label">Имя пользователя</label>
+        <input type="text" class="form-control" name="username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Подтвердить</button>
+    </form>
+  </section>
+{% endblock  %}

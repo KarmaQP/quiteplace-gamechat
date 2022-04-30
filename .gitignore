@@ -1,0 +1,5 @@
+.vscode
+__pycache__
+venv_qp
+.prettierignore
+db.sqlite3

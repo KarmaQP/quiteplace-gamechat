@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_style %}
+  <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock  %}
+
+{% block title %}Quite Place | Блог{% endblock  %}
+
+{% block content %}
+  <section id="all-posts">
+    <h2>Quite Place Посты</h2>
+
+    <ul>
+      {% for post in all_posts %}
+        {% include 'blog/includes/post.html' %}
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock  %}
